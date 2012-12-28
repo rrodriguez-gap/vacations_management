@@ -1,0 +1,14 @@
+%p#notice= notice
+%p
+  %b Description:
+  = @vacation.description
+%p
+  %b Days:
+  = @vacation.days
+%p
+  %b Requested on:
+  = @vacation.requested_on
+%p
+  %b Details:
+  = @vacation.details
+= link_to 'Back', employee_vacations_path(@employee)

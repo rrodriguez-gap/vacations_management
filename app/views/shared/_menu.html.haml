@@ -1,0 +1,11 @@
+- if user_signed_in? 
+  #menubar
+    %ul#menu
+      %li{:class=>(@module == HOME_PAGE ? 'selected' : nil)}
+        =link_to 'Home', root_path
+      %li{:class=>(@module == EMPLOYEE_MODULE ? 'selected' : nil)}
+        =link_to 'Employees Information', employees_path
+      %li
+        %a{:title=>'Search Employees', :href=>'#'} Search Employees
+    %ul#user_information
+      %span== Welcome #{current_user.first_name}, #{link_to('Logout', destroy_user_session_path, :method => :delete)}

@@ -1,0 +1,27 @@
+%h1 Listing employees
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Identification
+    %th Leader name
+    %th Start working on
+    %th Total Available Vacations 
+    %th
+    %th
+    %th
+    %th
+  - @employees.each do |employee|
+    %tr
+      %td= employee.first_name
+      %td= employee.last_name
+      %td= employee.identification
+      %td= employee.leader_name
+      %td= employee.start_working_on
+      %td= employee.total_vacations_days
+      %td= link_to 'Show', employee
+      %td= link_to 'Edit', edit_employee_path(employee)
+      %td= link_to 'Add/Request Vacations', new_employee_vacation_path(employee)
+      %td= link_to 'Destroy', employee, confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'New Employee', new_employee_path

@@ -1,0 +1,43 @@
+= form_for([@employee, @vacation]) do |f|
+  - if @vacation.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@vacation.errors.count, "error")
+        prohibited this vacation from being saved:
+      %ul
+        - @vacation.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :type, 'Type of Change'
+    %br/
+    = f.select :type, [['Deduction', 1],['Gratification', 2]], :style=>'size:100px;'
+    %br/
+    %span{:style=>'font-size:11px;font-color:gray;'} NOTE: Please select gratification option just for adding more days to an employee
+    %br/
+  .field
+    = f.label :since
+    %br/
+    = f.datepicker :since, :style=>'width: 100px;', :type=>'date', :class=>'date_field'
+  .field
+    = f.label :until
+    %br/
+    = f.datepicker :until, :style=>'width: 100px;', :type=>'date', :class=>'date_field'    
+  .field
+    = f.label :days, 'Total Days'
+    %br/
+    = f.number_field :days, :step=>'0.5', :max=>'30', :min=>'0', :style=>'width: 100px;'
+  .field
+    = f.label :description, 'Request Description'
+    %br/
+    = f.text_field :description,:size=>50
+  .actions
+    = f.submit
+
+%script{:type=>'text/javascript'}
+  $(document).ready(function(){
+  var datefield=document.createElement("input");
+  datefield.setAttribute("type", "date");
+  if (datefield.type != "date"){
+  jQuery('.date_field').datepicker();
+  }
+  });

@@ -1,0 +1,9 @@
+%p 
+  Hi GAP employee! please type your personal identification to check the total days of vacations that you have. 
+  = form_for(@employee, :url=>public_search_result_details_url, :method=>:post) do |f|
+    .field
+      = f.label :identification
+      %br/
+      = f.text_field :identification
+    .actions
+      = f.submit 'Find Employee'

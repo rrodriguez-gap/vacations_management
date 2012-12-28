@@ -1,0 +1,15 @@
+%p 
+  Hi 
+  = @employee.full_name
+  , Until today 
+  = Time.now.strftime('%m/%d/%Y')
+  you have: 
+  %br
+  %h2
+    = @employee.total_vacations_days
+    Vacations days available
+%p
+  If you have any additional question please let us know.
+  
+  Thanks,
+  Human Resources Department
