@@ -30,6 +30,11 @@ gem 'hpricot'
 gem 'ruby_parser'
 gem 'pg'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
