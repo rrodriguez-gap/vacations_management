@@ -1,5 +1,8 @@
+%h1
+  Hi GAP employee!
 %p 
-  Hi GAP employee! please type your personal identification to check the total days of vacations that you have. 
+  Please type your personal identification to check the total days of vacations that you have.
+  %br 
   = form_for(@employee, :url=>public_search_result_details_url, :method=>:post) do |f|
     .field
       = f.label :identification

@@ -16,20 +16,15 @@
         #logo
           #logo_text
             %h1
-              = link_to "Vacations Management", root_path
-            %h2
-              %a{:title => 'Go to Growth Acceleration Partners Site', :href => 'http://www.growthaccelerationpartners.com'} Growth Acceleration Partners
+              = link_to image_tag('site_title.png', :alt=>'Vacations Management'), root_path
         = render :partial=>'shared/menu'
       #content_header
       #site_content
         #content
           = yield
-      #content_footer
       #footer
         %p 
-          Copyright &copy; Rodrigo Rodriguez 
+          %a{:title => 'Go to Growth Acceleration Partners Site', :href => 'http://www.growthaccelerationpartners.com'} Growth Acceleration Partners
           |
           %a{:title => 'HTML5', :href => 'http://validator.w3.org/check?uri=referer'} HTML5
-          |
-          %a{:title => 'Original Design', :href => 'http://www.html5webtemplates.co.uk'} Original Design
       %p &nbsp;
