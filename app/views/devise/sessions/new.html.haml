@@ -1,5 +1,7 @@
 %h1 Welcome to GAP's Vacations System
-%p To get started, please log into your administrator account.
+%p 
+  To get started, please log into your administrator account. If not admin, please visit our
+  = link_to "public site", public_find_employee_url
 %h2 Sign in
 = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   %div

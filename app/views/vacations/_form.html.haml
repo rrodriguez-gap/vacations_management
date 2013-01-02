@@ -23,6 +23,10 @@
     %br/
     = f.datepicker :until, :style=>'width: 100px;', :type=>'date', :class=>'date_field'    
   .field
+    = f.label :requested_on
+    %br/
+    = f.datepicker :requested_on, :style=>'width: 100px;', :type=>'date', :class=>'date_field'
+  .field
     = f.label :days, 'Total Days'
     %br/
     = f.number_field :days, :step=>'0.5', :max=>'30', :min=>'0', :style=>'width: 100px;'

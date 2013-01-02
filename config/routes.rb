@@ -8,8 +8,8 @@ VacationsManagement::Application.routes.draw do
   
   devise_for :users, :controllers=>{:registrations=>'my_registrations'}
   
-  namespace :public do
-    get 'find_employee', :action=>'find_employee', :controller=>:employees
+  namespace :public, :path_prefix=>'site' do
+    get 'find_employee', :action=>'find_employee', :controller=>:employees, :as=>'find_employee'
     post 'search_result_details', :action=>'search_result_details', :controller=>:employees, :as=>'search_result_details'
   end
   

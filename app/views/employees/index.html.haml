@@ -19,3 +19,5 @@
       %td= employee.total_vacations_days
       %td= link_to 'Show details', employee
       %td= link_to 'Add/Request Vacations', new_employee_vacation_path(employee)
+%p
+  = link_to "Create a new employee", new_employee_path

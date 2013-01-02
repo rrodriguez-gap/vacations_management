@@ -10,7 +10,7 @@ class Vacation < ActiveRecord::Base
   validates :days, :presence=> true, :numericality=>true
   validates :requested_on, :presence=>true
   
-  attr_accessible :type, :description, :days, :requested_on
+  attr_accessible :type, :description, :days, :requested_on, :until, :since
   
   attr_accessor :type
   
