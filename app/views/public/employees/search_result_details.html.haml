@@ -1,18 +1,24 @@
-%h1
-  = "Hi #{@employee.full_name},"
-%h3
-  For  
-  = "#{Time.now.strftime('%B %d, %Y')},"
-  you have:
-  %strong
-    = @employee.total_vacations_days
-  days available
-%h4 Here is the detailed table about your vacations  
-=render '/shared/vacations_details_table', :employee=>@employee, :show_admin => false, :vacations=>@vacations
-%p
-  If you have any additional question please let us know.
-  %br
-  %br
-  Thanks,
-  %br
-  Human Resources Department
+-if @employee
+  %h1
+    = "Hi #{@employee.full_name},"
+  %h3
+    For  
+    = "#{Time.now.strftime('%B %d, %Y')},"
+    you have:
+    %strong
+      = @employee.total_vacations_days
+    days available
+  %h4 Here is the detailed table about your vacations  
+  =render '/shared/vacations_details_table', :employee=>@employee, :show_admin => false, :vacations=>@vacations
+  %p
+    If you have any additional question please let us know.
+    %br
+    %br
+    Thanks,
+    %br
+    Human Resources Department
+- else
+  %h1
+    No Employee found with that identification
+  %h2
+    Please try to type your identification without dashes and adding zeros if needed (CR)
