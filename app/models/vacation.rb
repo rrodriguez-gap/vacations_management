@@ -3,6 +3,8 @@ class Vacation < ActiveRecord::Base
   belongs_to :user, :foreign_key=>'deleted_by'
   STATUSES = ['','APPROVED','DELETED']
   
+  default_scope order('since DESC')
+  
   scope :visible, where(:status=>1)
   scope :total_days, sum(:days)
   

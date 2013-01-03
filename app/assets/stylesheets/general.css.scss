@@ -196,7 +196,14 @@ ol {
       &.selected {
         color: #444;
         text-decoration: none; } } } }
-
+p.flash_notice{
+  border-top: #016279 solid 1px;
+  border-bottom: #016279 solid 1px;
+  background-color: #E5E5DB;
+  font-weight:bold;
+  font-size:14px;
+  padding: 10px;
+} 
 #content {
   text-align: left;
   width: 613px;

@@ -13,7 +13,10 @@ VacationsManagement::Application.routes.draw do
     post 'search_result_details', :action=>'search_result_details', :controller=>:employees, :as=>'search_result_details'
   end
   
-  root :to => 'welcome#index'
+  get 'my_account' => 'users#edit_self', :as=>:edit_self
+  put 'update_account' => 'users#update_self', :as=>:update_self
+  
+  root :to => 'employees#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
