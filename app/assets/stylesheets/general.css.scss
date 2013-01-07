@@ -49,11 +49,11 @@ h6 {
 
 a {
   outline: none;
-  text-decoration: none;
+  text-decoration: underline;
   color: #3F3F3F;
   &:hover {
     outline: none;
-    text-decoration: underline;
+    text-decoration: none;
     color: #5D5D5D; 
   } 
 }
@@ -236,10 +236,10 @@ p.flash_notice{
   p {
     padding: 0 0 5px 0; }
   a {
-    color: #888;
+    color: #EAEAEA;
     text-decoration: none;
     &:hover {
-      color: #000;
+      color: #7F7F7F;
       text-decoration: none; } } }
 
 .search {
@@ -301,7 +301,7 @@ table {
       background: #016279;
       color: #FFF;
       padding: 7px 4px;
-      text-align: left; }
+      text-align: center; }
     td {
       background: #3B3B3B;
       color: #FFF;
