@@ -1,7 +1,11 @@
 #header {
-  background: #6f655f url(image_path('header_repeat2.png')) repeat-x top center;
+  background: transparent url(image_path('header_repeat2.png')) repeat-x top center;
   height: 270px;
   border-bottom: 1px solid #FFF; }
+
+table.employees_table{
+  width: 850px;
+}
 
 #menubar {
   height: 36px;
@@ -24,6 +28,11 @@
   }
 }
 
+.vacation_gratification_note {
+  font-size:11px;
+  font-color:gray;
+}
+
 ul#menu {
   float: left;
   margin: 0;
@@ -33,7 +42,6 @@ ul#menu {
     padding: 0 0 0 6px;
     list-style: none;
     margin: 3px 2px 0 0;
-    background: transparent url(image_path('tab.png')) no-repeat 0 0;
     a {
       font: normal 100% 'trebuchet ms', arial, sans-serif;
       display: block;
@@ -43,12 +51,24 @@ ul#menu {
       text-align: center;
       color: #FFF;
       text-decoration: none;
-      background: transparent url(image_path('tab.png')) no-repeat 100% 0; }
+      background: transparent url(image_path('tab.png')) no-repeat 100% 0;
+      -webkit-border-top-right-radius: 5px;
+      -webkit-border-top-left-radius: 5px;
+      -moz-border-radius-topright: 5px;
+      -moz-border-radius-topleft: 5px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px; 
+    }
     &.selected {
       margin: 3px 2px 0 0;
-      background: transparent url(image_path('tab_selected.png')) no-repeat 0 0;
       a {
         background: transparent url(image_path('tab_selected.png')) no-repeat 100% 0;
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-top-left-radius: 5px;
+        -moz-border-radius-topright: 5px;
+        -moz-border-radius-topleft: 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
         color: #111;
         &:hover {
           background: transparent url(image_path('tab_selected.png')) no-repeat 100% 0;

@@ -12,7 +12,7 @@
     %br/
     = f.select :type, [['Deduction', 1],['Gratification', 2]], :style=>'size:100px;'
     %br/
-    %span{:style=>'font-size:11px;font-color:gray;'} NOTE: Please select gratification option just for adding more days to an employee
+    %span{:class=>'vacation_gratification_note'} NOTE: Please select gratification option just for adding additional vacation days to an employee
     %br/
   .field
     = f.label :since
@@ -22,6 +22,10 @@
     = f.label :until
     %br/
     = f.datepicker :until, :style=>'width: 100px;', :type=>'date', :class=>'date_field'    
+  .field
+    = f.label :requested_on
+    %br/
+    = f.datepicker :requested_on, :style=>'width: 100px;', :type=>'date', :class=>'date_field'
   .field
     = f.label :days, 'Total Days'
     %br/

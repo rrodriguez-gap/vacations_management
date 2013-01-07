@@ -5,11 +5,19 @@ class ApplicationController < ActionController::Base
     @module = EMPLOYEE_MODULE
   end
   
-  def set_home_module
-    @module = HOME_PAGE
+  def set_new_employee_page
+    @module = NEW_EMPLOYEE_PAGE
   end
   
   def set_search_employee_module
-    @module = SEACH_EMPLOYEE_MODULE
+    @module = SEARCH_EMPLOYEE_MODULE
+  end
+  
+  def set_account_module
+    @module = MY_ACCOUNT_PAGE
+  end
+  
+  def set_users_module
+    @module = USERS_PAGE
   end
 end
