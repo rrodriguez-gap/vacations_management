@@ -13,3 +13,7 @@ TODO LIST
 * Email total number of vacations
 * Include a full new module for managing Sick Leaves
 * Enhance rspec tests, then add Capybara tests :-)
+
+See it live at
+-------------------------------
+http://rocky-escarpment-5701.herokuapp.com/

@@ -1,16 +1,19 @@
 - if flash[:notice]
   %p{:class=>'flash_notice'}= flash[:notice]
+%style
+  = "#site_content #content{width:830px !important}"
 %h1 Listing employees
 %table
   %tr
-    %th First name
-    %th Last name
-    %th Identification
-    %th Leader name
-    %th Start working on
-    %th Total Available Vacations 
-    %th
-    %th
+    %th{:style=>'width:12%'} First name
+    %th{:style=>'width:15%'} Last name
+    %th{:style=>'width:10%'} Identification
+    %th{:style=>'width:15%'} Leader name
+    %th{:style=>'width:10%'} Start working on
+    %th{:style=>'width:13%'} Total Available Vacations 
+    %th{:style=>'width:10%'}
+    %th{:style=>'width:10%'}
+    %th{:style=>'width:5%'}
   - @employees.each do |employee|
     %tr
       %td= employee.first_name
@@ -21,5 +24,6 @@
       %td= employee.total_vacations_days
       %td= link_to 'Show details', employee
       %td= link_to 'Add/Request Vacations', new_employee_vacation_path(employee)
+      %td= link_to 'Delete', employee_path(employee), :method=>'delete', :confirm=>'Are you sure that you want to delete this emplpyee?'
 %p
   = link_to "Create a new employee", new_employee_path

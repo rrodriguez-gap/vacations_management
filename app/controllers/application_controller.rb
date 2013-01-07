@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
   def set_account_module
     @module = MY_ACCOUNT_PAGE
   end
+  
+  def set_users_module
+    @module = USERS_PAGE
+  end
 end

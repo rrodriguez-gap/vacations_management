@@ -12,9 +12,11 @@ VacationsManagement::Application.routes.draw do
     get 'find_employee', :action=>'find_employee', :controller=>:employees, :as=>'find_employee'
     post 'search_result_details', :action=>'search_result_details', :controller=>:employees, :as=>'search_result_details'
   end
-  
+
   get 'my_account' => 'users#edit_self', :as=>:edit_self
   put 'update_account' => 'users#update_self', :as=>:update_self
+
+  resources :users
   
   root :to => 'employees#index'
 
