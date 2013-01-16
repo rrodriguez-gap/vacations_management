@@ -31,6 +31,7 @@ gem 'rspec'
 gem 'hpricot'
 gem 'ruby_parser'
 gem 'pg'
+gem 'therubyracer'
 
 group :development, :test do
   gem 'rspec-rails'
