@@ -1,0 +1,36 @@
+%table{:class=>'employees_table'}
+  %tr
+    %th Days
+    %th Description
+    %th Date of Request
+    %th Since Date
+    %th Until Date
+    -if show_admin
+      %th
+  %tr
+    %td{:class=>(employee.vacations_per_month > 0 ? 'green' : 'red')}= employee.vacations_per_month > 0 ? "+#{employee.vacations_per_month}" : employee.vacations_per_month
+    %td== Monthly based vacations since #{@employee.try(:start_working_on)}
+    %td= " -- "
+    %td= " -- "
+    %td= " -- "
+    -if show_admin
+      %td= " -- "
+  -@vacations.each do |v|
+    %tr
+      %td{:class=>(v.try(:days) > 0 ? 'green' : 'red')}= v.try(:days) > 0 ? "+#{v.try(:days)}" :  v.try(:days)
+      %td= v.description
+      %td= v.requested_on.try(:strftime, '%m/%d/%Y')
+      %td= v.since.try(:strftime, '%m/%d/%Y')
+      %td= v.until.try(:strftime, '%m/%d/%Y')
+      -if show_admin
+        %td= link_to('Delete', employee_vacation_path(employee, v.id), :method => :delete, :confirm=>'Are you sure that you want to delete this Vacation registration?')
+  %tr{:style=>'border-top:2px solid black;'}
+    %td
+      %strong=employee.total_vacations_days
+    %td
+      %strong Total Amount of vacations left  
+    %td= " -- "
+    %td= " -- "
+    %td= " -- "
+    -if show_admin
+      %td= " -- "

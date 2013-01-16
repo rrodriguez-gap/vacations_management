@@ -1,0 +1,23 @@
+%h1 Listing employees
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Identification
+    %th Leader name
+    %th Start working on
+    %th Total Available Vacations 
+    %th
+    %th
+  - @employees.each do |employee|
+    %tr
+      %td= employee.first_name
+      %td= employee.last_name
+      %td= employee.identification
+      %td= employee.leader_name
+      %td= employee.start_working_on
+      %td= employee.total_vacations_days
+      %td= link_to 'Show details', employee
+      %td= link_to 'Add/Request Vacations', new_employee_vacation_path(employee)
+%p
+  = link_to "Create a new employee", new_employee_path

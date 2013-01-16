@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :set_employee_module
+  before_filter :set_employee_module, :except=>'new'
+  before_filter :set_new_employee_page, :only=>'new'
   
   # GET /employees
   # GET /employees.json

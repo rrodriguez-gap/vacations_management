@@ -1,0 +1,17 @@
+- if flash[:notice]
+  %p{:class=>'flash_notice'}= flash[:notice]
+%h1 Listing All Administrative Users
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Email
+    %th
+  - @users.each do |user|
+    %tr
+      %td= user.first_name
+      %td= user.last_name
+      %td= user.email      
+      %td= link_to 'Destroy Account', user_path(user), :method=>'delete', :confirm=>'Are you sure that you want to delete this Administrative user?'
+%p
+  = link_to "Create a new Admin user", new_user_path

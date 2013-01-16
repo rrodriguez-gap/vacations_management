@@ -1,20 +1,5 @@
 %h1== Listing vacations for employee: #{@employee.full_name}
-%table
-  %tr
-    %th Days
-    %th Requested on
-    %th Description
-    %th Status
-    %th Deleted By
-    %th
-  - @vacations.each do |vacation|
-    %tr
-      %td= vacation.description
-      %td= vacation.days
-      %td= vacation.requested_on
-      %td= vacation.status_name
-      %td= vacation.user.try(:full_name)
-      %td= link_to('Destroy', employee_vacation_path(@employee.id, vacation.id), :method => :delete, :confirm=>'Are you sure that you want to delete this Vacation registration?') if(vacation.status != 2)
+=render '/shared/vacations_details_table', :employee=>@employee, :show_admin => true, :vacations=>@vacations
 %br/
 = link_to 'New Vacation', new_employee_vacation_path(@employee)
 |

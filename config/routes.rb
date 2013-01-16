@@ -8,12 +8,17 @@ VacationsManagement::Application.routes.draw do
   
   devise_for :users, :controllers=>{:registrations=>'my_registrations'}
   
-  namespace :public do
-    get 'find_employee', :action=>'find_employee', :controller=>:employees
+  namespace :public, :path_prefix=>'site' do
+    get 'find_employee', :action=>'find_employee', :controller=>:employees, :as=>'find_employee'
     post 'search_result_details', :action=>'search_result_details', :controller=>:employees, :as=>'search_result_details'
   end
+
+  get 'my_account' => 'users#edit_self', :as=>:edit_self
+  put 'update_account' => 'users#update_self', :as=>:update_self
+
+  resources :users
   
-  root :to => 'welcome#index'
+  root :to => 'employees#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
