@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
   def set_users_module
     @module = USERS_PAGE
   end
+  
+  def set_adminitrator_module
+    @module = ADMINISTRATOR_PAGE
+  end
 end

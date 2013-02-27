@@ -4,7 +4,7 @@
       %li{:class=>(@module == EMPLOYEE_MODULE ? 'selected' : nil)}
         =link_to 'Employees Information', employees_path
       %li{:class=>(@module == USERS_PAGE ? 'selected' : nil)}
-        =link_to 'Administrative Users', users_path
+        =link_to 'Administrative Users', administrators_path
       %li{:class=>(@module == MY_ACCOUNT_PAGE ? 'selected' : nil)}
         =link_to 'My Account', edit_self_path
     %ul#user_information

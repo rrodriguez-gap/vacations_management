@@ -1,0 +1,23 @@
+<h1>Listing Administrators Users</h1>
+
+<table>
+  <tr>
+  	<th>First name</th>
+    <th>Last name</th>
+    <th>Identification</th>
+    <th></th>
+  </tr>
+
+<% @administrators.each do |administrator| %>
+  <tr>
+  	<td><%= administrator.first_name%></td>
+  	<td><%= administrator.last_name%></td>
+  	<td><%= administrator.identification%></td>
+    <td><%= link_to 'Unassign', administrator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Administrator', new_administrator_path %>

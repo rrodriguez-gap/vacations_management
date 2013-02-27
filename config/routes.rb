@@ -1,4 +1,7 @@
 VacationsManagement::Application.routes.draw do
+  resources :administrators
+
+
   resources :employees do
     collection do
       get 'search', :action=>'search'
