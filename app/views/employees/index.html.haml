@@ -19,11 +19,13 @@
       %td= employee.first_name
       %td= employee.last_name
       %td= employee.identification
-      %td= employee.leader_name
+      %td= 'TODO'
       %td= employee.start_working_on
       %td= employee.total_vacations_days
-      %td= link_to 'Show details', employee
-      %td= link_to 'Add/Request Vacations', new_employee_vacation_path(employee)
-      %td= link_to 'Delete', employee_path(employee), :method=>'delete', :confirm=>'Are you sure that you want to delete this emplpyee?'
+      %td= link_to image_tag('icons/zoom.png'), employee
+      %td= link_to image_tag('icons/edit.png'),  edit_employee_path(employee)
+      %td= link_to image_tag('icons/delete.png'), employee_path(employee), :method=>'delete', :confirm=>'Are you sure that you want to delete this employee?'
 %p
   = link_to "Create a new employee", new_employee_path
+  
+  

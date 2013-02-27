@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130102081427) do
+ActiveRecord::Schema.define(:version => 20130227201523) do
 
   create_table "employees", :force => true do |t|
     t.string   "first_name"
@@ -57,6 +57,9 @@ ActiveRecord::Schema.define(:version => 20130102081427) do
     t.datetime "updated_at",                             :null => false
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "type"
+    t.string   "identification"
+    t.date     "start_working_on"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
@@ -71,13 +74,13 @@ ActiveRecord::Schema.define(:version => 20130102081427) do
     t.text     "details"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
-    t.integer  "employee_id"
+    t.integer  "user_id"
     t.integer  "status",       :default => 1
     t.integer  "deleted_by"
     t.date     "since"
     t.date     "until"
   end
 
-  add_index "vacations", ["employee_id"], :name => "index_vacations_on_employee_id"
+  add_index "vacations", ["user_id"], :name => "index_vacations_on_employee_id"
 
 end

@@ -1,6 +1,6 @@
 class Vacation < ActiveRecord::Base
-  belongs_to :employee
   belongs_to :user, :foreign_key=>'deleted_by'
+
   STATUSES = ['','APPROVED','DELETED']
   
   default_scope order('since DESC')

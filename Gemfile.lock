@@ -88,6 +88,8 @@ GEM
       activesupport (= 3.2.10)
       bundler (~> 1.0)
       railties (= 3.2.10)
+    rails-footnotes (3.7.9)
+      rails (>= 3.0.0)
     railties (3.2.10)
       actionpack (= 3.2.10)
       activesupport (= 3.2.10)
@@ -157,6 +159,7 @@ DEPENDENCIES
   mysql (~> 2.8.1)
   pg
   rails (~> 3.2.10)
+  rails-footnotes
   rspec
   rspec-rails
   ruby_parser

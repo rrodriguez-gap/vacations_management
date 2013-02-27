@@ -8,6 +8,10 @@
         - @employee.errors.full_messages.each do |msg|
           %li= msg
   .field
+    = f.label :identification
+    %br/
+    = f.text_field :identification
+  .field
     = f.label :first_name
     %br/
     = f.text_field :first_name
@@ -19,17 +23,27 @@
     = f.label :email
     %br/
     = f.text_field :email
+  
   .field
-    = f.label :identification
+    = f.label :password, 'Default Password'
     %br/
-    = f.text_field :identification
+    = f.password_field :password, :autocomplete => "off"
   .field
-    = f.label :leader_name
+    = f.label :password_confirmation
     %br/
-    = f.text_field :leader_name
+    = f.password_field :password_confirmation
   .field
     = f.label :start_working_on
     %br/
-    = f.date_select :start_working_on
+    = f.datepicker :start_working_on, :style=>'width: 100px;', :type=>'date', :class=>'date_field'
   .actions
     = f.submit
+
+%script{:type=>'text/javascript'}
+  $(document).ready(function(){
+  var datefield=document.createElement("input");
+  datefield.setAttribute("type", "date");
+  if (datefield.type != "date"){
+  jQuery('.date_field').datepicker();
+  }
+  });
