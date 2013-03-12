@@ -7,11 +7,9 @@ class Employee < ActiveRecord::Base
   validates :start_working_on, :presence=>true
   validates :identification, :presence=>true
   validates :email, :presence=>true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
-  
   scope :all_ordered, order(:first_name)
   
   EMPLOYEE_VACATIONS_DAYS_PER_MONTH = 1
-  
   def total_vacations_days
 	  vacations_per_month + self.vacations.visible.sum(:days)
   end
