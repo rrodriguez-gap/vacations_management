@@ -5,10 +5,8 @@ development:
   reconnect: false
   database: vacations_management_dev
   pool: 5
-  username: root
-  password: root
-  socket: /tmp/mysql.sock
-  host: localhost
+  username: 
+  password: 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -19,9 +17,8 @@ test:
   reconnect: false
   database: vacations_management_test
   pool: 5
-  username: root
-  password: root
-  socket: /tmp/mysql.sock
+  username: 
+  password: 
 
 production:
   adapter: mysql
@@ -29,7 +26,6 @@ production:
   reconnect: false
   database: vacations_management_dev
   pool: 5
-  username: root
-  password: root
-  socket: /tmp/mysql.sock
+  username: 
+  password: 
 
