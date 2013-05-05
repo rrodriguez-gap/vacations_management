@@ -7,7 +7,7 @@ class VacationsController < ApplicationController
     @vacations = @employee.vacations
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @vacations }
+      format.json { render @vacations.to_json }
     end
   end
 
@@ -18,7 +18,7 @@ class VacationsController < ApplicationController
     @vacation = @employee.vacations.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @vacation }
+      format.json { render @vacation.to_json }
     end
   end
 
@@ -29,7 +29,7 @@ class VacationsController < ApplicationController
     @employee = Employee.find(params[:employee_id])
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @vacation }
+      format.json { render @vacation.to_json }
     end
   end
 
@@ -40,11 +40,11 @@ class VacationsController < ApplicationController
     @vacation = @employee.vacations.build(params[:vacation])
     respond_to do |format|
       if @vacation.save
-        format.html { redirect_to [@employee], notice: 'Vacation was successfully created.' }
-        format.json { render json: @vacation, status: :created, location: [@employee, @vacation] }
+        format.html { redirect_to [@employee], :notice=> 'Vacation was successfully created.' }
+        format.json { render @vacation.to_json, :status, :created, :location [@employee, @vacation] }
       else
-        format.html { render action: "new" }
-        format.json { render json: @vacation.errors, status: :unprocessable_entity }
+        format.html { render :action=> "new" }
+        format.json { render @vacation.errors.to_json, :status=> :unprocessable_entity }
       end
     end
   end

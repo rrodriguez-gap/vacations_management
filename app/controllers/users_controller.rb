@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @employees }
+      format.json { render @employees.to_json }
     end
   end
   
@@ -25,10 +25,10 @@ class UsersController < ApplicationController
           flash[:notice] = "Your account was updated successfully"
           redirect_to root_path
         }
-        format.json { render json: @user }
+        format.json { render @user.to_json }
       else
-        format.html  { render action: "edit_self" }
-        format.json { render json: @user }
+        format.html  { render :action=> "edit_self" }
+        format.json { render @user.to_json }
       end
     end
   end
@@ -45,12 +45,12 @@ class UsersController < ApplicationController
           flash[:notice] = "You just created a new account. Please inform the admin."
           redirect_to users_path
         }
-        format.json { render json: @user }
+        format.json { render @user.to_json }
       else
         format.html {
-          render action: "new", controller: 'users'
+          render :action=> "new", :controller=> 'users'
         }
-        format.json { render json: @user }
+        format.json { render @user.to_json }
       end
     end
   end
