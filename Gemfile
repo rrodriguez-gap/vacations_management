@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.10'
+gem 'rails', '~> 3.2.18'
 gem 'thin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'mysql', '~> 2.8.1'
+group :development do
+  gem 'mysql', '~> 2.8.1'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,7 +17,6 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -25,12 +25,13 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "jquery_datepicker"
 gem 'haml'
-gem 'devise'
-gem "rspec-rails"
-gem 'rspec'
+gem 'devise', '2.1.2'
+gem "rspec-rails", '2.12.0'
+gem 'rspec', '2.12.0'
 gem 'hpricot'
 gem 'ruby_parser'
 gem 'pg'
+gem 'heroku'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
